@@ -4,11 +4,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
-using Telegram.Bot.Types;
-using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types.Enums;
-using System.Text;
-using System.Runtime.InteropServices;
+using System.Configuration;
 using static BotCommands;
 
 static class Program
@@ -17,7 +14,8 @@ static class Program
 
     static async Task Main(string[] args)
     {
-        botClient = new TelegramBotClient("557207430:AAHzpkxqxcYPlzBBCJi7QVYjrOwpRi3umi8");
+        var botToken = ConfigurationManager.AppSettings["TelegramBotToken"];
+        botClient = new TelegramBotClient(botToken);
 
         var me = await botClient.GetMeAsync();
         Console.WriteLine($"Hello, I am user {me.Id} and my name is {me.FirstName}.");
