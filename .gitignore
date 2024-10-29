@@ -368,3 +368,6 @@ FodyWeavers.xsd
 
 .DS_Store
 
+TelegramBotReminder/reminders.db
+TelegramBotReminder/reminders.db-shm
+TelegramBotReminder/reminders.db-wal
